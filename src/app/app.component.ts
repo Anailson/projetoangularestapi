@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Curso-Angular-Rest';
+
+  //VENHA DA NOSSA API
+  usuario = {login: ' ' , senha: ' '};
+   
+ public login(){
+
+   console.log("Teste Login: " + this.usuario.login + "senha:" + this.usuario.senha)
+
+ }
+
 }
