@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { LoginServiceService } from './service/login-service.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,15 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Curso-Angular-Rest';
+  title = 'Curso-Angular-REST';
 
-  //VENHA DA NOSSA API
-  usuario = {login: ' ' , senha: ' '};
-   
- public login(){
+  usuario = {login: '', senha: ''};
 
-   console.log("Teste Login: " + this.usuario.login + "senha:" + this.usuario.senha)
+  constructor (private loginService: LoginServiceService){
 
- }
+  }
+  
+
+  public login() {
+    this.loginService.login(this.usuario);
+  }
 
 }
